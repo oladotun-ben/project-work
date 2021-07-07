@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding:0;
+}
+.wrapper{
+    width: 1170px;
+    margin: auto;
+
+}
+header{
+    height: 20vh;
+    -webkit-background-size:cover;
+    background-position: center center;
+    position: relative;
+  
+}
+
+.nav-area{
+    float: right;
+    list-style: none;
+    margin-top: 45px;
+    padding-right: 100px;
+}
+.nav-area li a{
+    color:white;
+    text-decoration:dotted;
+    padding: 5px 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+
+}
+.nav-area li a:hover{
+    background:white;
+    color: #333333;
+}
+#logo{
+    width: 100px;
+    height: auto;
+    float: left;
+    list-style: none;
+    margin-top: 30px;
+    margin-left: 100px;
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.head-wrapper{
+    background:rgb(224, 92, 92);
+    height: 120px;
+
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    background-color:white;
+    margin-left: 120px;
+    padding-top: 50px;
+
+    
+}
+#psp1{
+    margin-top: 50px;
+}
+
+#Biodata{
+    font-size: 15px;
+    
+    
+}
+#data{
+    list-style-type:none;
+
+}
+
+
+#form{
+    box-sizing: border-box;
+    text-align: center;
+}
+#fill-form{
+
+    padding: 0;
+    color:rgb(48, 48, 68);
+    text-align: center;
+    margin-top: 150px;
+    font-size: 25px;
+    
+}
+#submit{
+    width:60px;
+    height: 30px;
+    padding-left: 10px;
+    color: white;
+    background-color: rgb(236, 76, 76);
+    display: inline-block;
+    font-size: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    
+    
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    background:rgb(224, 92, 92);
+    height: 150px;
+    width: 1350px;
+    margin-top: 50px;
+}
+#footer-one{
+    margin-left: 400px;
+    color: white;
+    padding-top: 50px;
+
+}
+#foot{
+    color:rgb(48, 48, 68);
+}
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Kings University Cafe</title>
+    <link rel="stylesheet" href="StyleTwo.css">
+</head>
+
+<body>
+    <header class="head">
+        <img src="images/kingsUniversity.png" alt="KU logo" iheight="300px" width="300">
+        <div class="head-wrapper">
+            <h1 id="logo">Ku Cafeteria</h1>
+
+            <div class="nav-area">
+             <ul>
+                <li><a href="#"> Records </a></li>
+                
+        </div>
+        </div>
+    </header>
+
+    <main>
+        <img src="images/psp3.jpg" height="178px" width="147px" id="psp1"><br>
+
+        <h1 id="Biodata">
+            <ul id="data">
+            <li>Name: Edmond Praise</li><br>
+            <li>Department: Social Sciences</li><br>
+            <li>Program: Accounting</li><br>
+            <li>Matric Number : ACC/2020/005</li><br>
+            <li>Level: 100L</li>
+            </ul>
+        </h1>
+    </main>
+    <footer>
+                
+                <p id="footer-one">&copy; 2015 - 2021Kings University, OdeOmu <em id="foot">| Powered by Kings University Students</em></p>
+                 </div>
+                 
+            
+            </footer>
+
+  
+
+</body>
+
+</html>

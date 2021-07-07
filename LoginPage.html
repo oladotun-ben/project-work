@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kings University Cafe</title>
+    <link rel="stylesheet" href="LoginStyle.css"/>
+
+    <script>
+        function getInfo(){
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if(username === "KINGSOFTHEPALACE**" && (password === "$$CODIFY&&"))
+            {
+                alert("Succesful");
+                window.open("ProjectOneHome.html");
+            }
+            else
+            {
+                alert("Wrong Entry");
+            }
+            
+        }
+    </script>
+        <body>
+            
+            <div class="login-box">
+                <img src="images/kingsUniversity.png" alt="KU logo" iheight="300px" width="300" id="headtwo">
+                
+                <h1>Cafeteria Login</h1>
+                <form>
+                    <div class="user-box">
+                        <input type="username" name="" required="" id="username" placeholder="Username"><br><br>
+                        
+                    </div>
+                    <div class="user-box">
+
+                        <input type="password" name="" required="" id="password" placeholder="Password"> <br><br>
+                    
+                <button onclick="getInfo()" >Log in</button>
+
+                    </div>
+                    <a>
+                    <a href="StudentsPortal.html"><em>Students Login    </em></a>
+                </form>
+            </div>
+        </body>
+    </head>
+</html>
