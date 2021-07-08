@@ -2,19 +2,14 @@
     margin: 0;
     padding:0;
 }
+.identification{
+  padding-top: 20px;
+}
 .wrapper{
     width: 1170px;
     margin: auto;
 
 }
-header{
-    height: 20vh;
-    -webkit-background-size:cover;
-    background-position: center center;
-    position: relative;
-  
-}
-
 .nav-area{
     float: right;
     list-style: none;
@@ -49,12 +44,12 @@ header{
 
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    background-color:white;
-    margin-left: 120px;
-    padding-top: 50px;
+section{
+  display: flex;
+  flex-direction: column;
+  background-color:white;
+  margin-left: 120px;
+  padding-top: 50px;
 
     
 }
@@ -76,9 +71,10 @@ main{
 }
 
 
-#form{
+form{
     box-sizing: border-box;
     text-align: center;
+   
 }
 #fill-form{
 
@@ -121,9 +117,6 @@ footer{
 }
 #foot{
     color:rgb(48, 48, 68);
-}
-form{
-  padding-left: 450px;
 }
 .multiselect {
     width: 200px;

@@ -8,8 +8,10 @@ if (isset($_POST['submit'])) {
     $query=mysqli_query($conn, $sql);
     $result = mysqli_fetch_assoc($query);
     session_start();
+    $_SESSION['id']=$result['id'];
     $_SESSION['username']=$result['username'];
     $_SESSION['role']=$result['role'];
+var_dump($_SESSION);
     header('location:ProjectOneHome.php');
     
 }
