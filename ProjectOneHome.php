@@ -1,11 +1,16 @@
+<?php
+    
+
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <title>Kings University Cafe</title>
-    <link rel="stylesheet" href="StyleTwo.css">
+    <link rel="stylesheet" href="styleOne.css">
 </head>
+
 
 <body>
     <header class="head">
@@ -22,17 +27,14 @@
     </header>
 
     <main>
-        <img src="images/psp5.jpg" height="178px" width="147px" id="psp1"><br>
-
-        <h1 id="Biodata">
-            <ul id="data">
-            <li>Name: Abigail Brown</li><br>
-            <li>Department: Biological Sciences</li><br>
-            <li>Program: Biotechnology</li><br>
-            <li>Matric Number : BTH/2019/001</li><br>
-            <li>Level: 200L</li>
-            </ul>
-        </h1>
+        <div class="Identification number">
+            <h1 id="fill-form"> IDENTIFICATION NUMBER  </h1></div><br>
+            <form action="" method="GET" id="form">
+                <label for="surname"></label>
+                <input type="text" name="" id="first" ><br><br>
+                <button onclick="getInfo()" >Submit</button>
+                </form>
+                </div>
     </main>
     <footer>
                 
