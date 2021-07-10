@@ -1,16 +1,19 @@
 <?php
  session_start();
-if (!isset($_SESSION)) {
-	header("location:index.php");
+if (!isset($_SESSION['id'])) {
+  header("location:index.php");
 }
-    if (isset($_POST['submit'])) {
-        $conn = mysqli_connect('localhost', 'root', '', 'project-work');
-        $matric_no = $_POST['matric_no'];
-        $sql= "SELECT * FROM students WHERE matric_no='$matric_no'";
-        $query=mysqli_query($conn, $sql);
-        $result = mysqli_fetch_assoc($query);
-        
-    }
+// var_dump($_SESSION);
+$result = null;
+if (isset($_POST['submit'])) {
+  $conn = mysqli_connect('localhost', 'root', '', 'projectwork');
+  $matric_no = $_POST['matric_no'];
+  $sql= "SELECT * FROM students WHERE matric_no='$matric_no'";
+  $query=mysqli_query($conn, $sql);
+  $result = mysqli_fetch_assoc($query);
+
+    
+}
 
 ?>
 <!DOCTYPE html>
@@ -32,7 +35,7 @@ if (!isset($_SESSION)) {
 
             <div class="nav-area">
              <ul>
-                <li><a href="#"> Records </a></li>
+                <li><a href="logout.php"> Records </a></li>
                 
         </div>
         </div>
@@ -41,7 +44,7 @@ if (!isset($_SESSION)) {
     <main>
         <div class="Identification">
             <h1 id="fill-form"> IDENTIFICATION NUMBER  </h1><br>
-            <form action="" method="GET" >
+            <form action="" method="post" >
                 <label for="surname"></label>
                 <input type="text" name="matric_no" id="first" ><br><br>
                 <button name='submit' type='submit' >Submit</button>
@@ -65,11 +68,11 @@ if (!isset($_SESSION)) {
 
         <h1 id="Biodata">
             <ul id="data">
-            <li>Name: Justus Emmanuel</li><br>
-            <li>Department: Mathematical Sciences</li><br>
-            <li>Programme: Computer Science</li><br>
-            <li>Matric Number : CSC/2017/009</li><br>
-            <li> Level: 400L</li><br>
+            <li>Name: <?php echo $result['name'] ?></li><br>
+            <li>Department: <?php echo $result['name'] ?></li><br>
+            <li>Programme: <?php echo $result['name'] ?></li><br>
+            <li>Matric Number : <?php echo $result['matric_no'] ?></li><br>
+            <li> Level: <?php echo "Part".$result['part'] ?></li><br>
             </ul>
         </h1>
         </td>
@@ -343,7 +346,7 @@ if (!isset($_SESSION)) {
             </div>  
     </footer>
 
-  
+  <script src="StudentOne.js"></script>
 
 </body>
 

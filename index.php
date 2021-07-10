@@ -1,18 +1,23 @@
 <?php
+ session_start();
 require 'conn.php';
+var_dump($_SESSION);
 if (isset($_POST['submit'])) {
-    $conn = mysqli_connect('localhost', 'root', '', 'project-work');
+    $conn = mysqli_connect('localhost', 'root', '', 'projectwork');
     $username = $_POST['username'];
     $password = $_POST['password'];
     $sql= "SELECT * FROM admi WHERE username='$username'AND password = '$password'";
     $query=mysqli_query($conn, $sql);
-    $result = mysqli_fetch_assoc($query);
-    session_start();
-    $_SESSION['id']=$result['id'];
-    $_SESSION['username']=$result['username'];
-    $_SESSION['role']=$result['role'];
-var_dump($_SESSION);
-    header('location:ProjectOneHome.php');
+    if (mysqli_num_rows($query)>0) {
+        $result = mysqli_fetch_assoc($query);
+        $_SESSION['id']=$result['id'];
+        $_SESSION['username']=$result['username'];
+        $_SESSION['role']=$result['role'];
+        header('location:ProjectOneHome.php');
+    }
+    else{
+        echo "error";
+    }
     
 }
 
