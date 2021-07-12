@@ -14,9 +14,9 @@ body{
     width: 400px;
     padding: 40px;
     transform: translate(-50%, -50%);
-    background: rgb(65, 57, 57);
+    background:white;
     box-sizing: border-box;
-    box-shadow: white;
+    box-shadow: black;
     border-radius: 10px;
     
 }

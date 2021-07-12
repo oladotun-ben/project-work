@@ -3,17 +3,35 @@
 if (!isset($_SESSION['id'])) {
   header("location:index.php");
 }
+$conn = mysqli_connect('localhost', 'root', '', 'projectwork');
 // var_dump($_SESSION);
 $result = null;
 if (isset($_POST['submit'])) {
-  $conn = mysqli_connect('localhost', 'root', '', 'projectwork');
   $matric_no = $_POST['matric_no'];
   $sql= "SELECT * FROM students WHERE matric_no='$matric_no'";
   $query=mysqli_query($conn, $sql);
-  $result = mysqli_fetch_assoc($query);
-
-    
+  $result = mysqli_fetch_assoc($query);    
 }
+
+if ($result !== null) {
+  $id = $result['id'];
+  $sql= "SELECT * FROM meals WHERE student_id='$id'";
+  $query=mysqli_query($conn, $sql);
+  $meals = mysqli_fetch_all($query, MYSQLI_ASSOC);
+  $days=[];
+  $newList=[];
+
+  foreach ($meals as $meal) {
+    $newList[$meal['date']]=[]; 
+  }
+  foreach ($meals as $meal) {
+    array_push($newList[$meal['date']],$meal);
+  }
+  $days= array_unique($days);
+ 
+  
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -24,6 +42,7 @@ if (isset($_POST['submit'])) {
     <title>Kings University Cafe</title>
     <link rel="stylesheet" href="styleOne.css">
     <link rel="stylesheet" href="StyleTwo.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 
 
@@ -78,7 +97,48 @@ if (isset($_POST['submit'])) {
         </td>
         <td>
         <div class="general">
-         <form class="form">
+        <div>
+          <table>
+          <tr>
+            <td>
+              Date
+            </td>
+            <td>
+              First Meal
+            </td>
+            <td>
+              Second Meal
+            </td>
+          </tr>
+          <?php foreach ($newList as $key=>$lists ) {?>
+          <tr>
+            <td>
+              <?php echo $key ?>
+            </td>
+            <?php foreach ($lists as $list ) {?>
+            <td>
+              <i class="fas fa-check"></i>
+            </td>
+            <?php  }?>
+          </tr>
+          <?php  }?>
+          <tr>
+            <td>
+              <?php echo date('D-M-Y'); ?>
+            </td>
+            <td>
+              <input type="checkbox" id='meal' onchange="postMeal()">
+              <input type="hidden" id='student_id' value="<?php echo $result['id'] ?>">
+            </td>
+            <td>
+              <!-- <form id="meal2">
+                <input type="checkbox" name='meal2'>
+              </form> -->
+            </td>
+          </tr>
+          </table>
+        </div>
+         <!-- <form class="form">
             <div class="multiselect">
               <div class="selectBox" onclick="showCheckboxes()">
                 <select>
@@ -161,9 +221,9 @@ if (isset($_POST['submit'])) {
                   
               </div>
             </div>
-          </form> 
+          </form>  -->
           <br>
-          <form>
+          <!-- <form>
             <div class="multiselect">
               <div class="selectBox" onclick="showCheckboxes3()">
                 <select>
@@ -333,7 +393,7 @@ if (isset($_POST['submit'])) {
                   
               </div>
             </div>
-          </form><br></div> 
+          </form><br></div>  -->
           </td>
           </tr>
           </table>

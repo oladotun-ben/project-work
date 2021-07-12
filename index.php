@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
     $conn = mysqli_connect('localhost', 'root', '', 'projectwork');
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $sql= "SELECT * FROM admi WHERE username='$username'AND password = '$password'";
+    $sql= "SELECT * FROM user WHERE username='$username'AND password = '$password'";
     $query=mysqli_query($conn, $sql);
     if (mysqli_num_rows($query)>0) {
         $result = mysqli_fetch_assoc($query);
