@@ -207,6 +207,16 @@ footer{
   #general
   {
       margin-bottom: 3000px;
+      
+  }
+  .row{
+    width: 100px;
+    text-align: center;
+    /* padding: 100px; */
+  }
+  .container{
+height: 300px;
+margin-top: 200px;
   }
   
   

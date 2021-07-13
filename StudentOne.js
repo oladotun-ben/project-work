@@ -1,5 +1,22 @@
 var expanded = false;
 
+
+
+function postMeal() {
+  // e.preventDefault();
+  var student_id = document.getElementById('student_id').value
+  console.log(student_id)
+  var params ='student_id='+ student_id
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'studentsMeals.php', true);
+  xhr.setRequestHeader('Content-type', 'Application/x-www-form-urlencoded')
+  xhr.onload = function (){
+    alert(this.responseText)
+  }
+  xhr.send(params)
+  
+
+}
 function showCheckboxes() {
   var checkboxes = document.getElementById("checkboxes");
   if (!expanded) {
@@ -66,3 +83,7 @@ function showCheckboxes6() {
   }
   
 }
+
+// function postMeals() {
+//   console.log('fff');
+// }
